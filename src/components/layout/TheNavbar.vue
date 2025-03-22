@@ -45,7 +45,7 @@
            :style="{ backgroundColor: 'var(--color-surface)' }">
         <div class="flex justify-between items-center mb-8 pb-4" 
              :style="{ borderBottomColor: 'var(--color-border)' }">
-          <div class="text-xl font-bold" style="color: var(--color-primary)">Stone-Age.io</div>
+          <StoneLogo size="sm" />
           <button 
             class="p-2 rounded-full h-10 w-10 flex items-center justify-center"
             aria-label="Close menu"
@@ -85,11 +85,13 @@
 
 <script>
 import ThemeToggle from '../common/ThemeToggle.vue';
+import StoneLogo from '../common/StoneLogo.vue';
 
 export default {
   name: 'TheNavbar',
   components: {
-    ThemeToggle
+    ThemeToggle,
+    StoneLogo
   },
   data() {
     return {

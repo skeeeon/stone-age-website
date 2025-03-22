@@ -8,28 +8,15 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import TheHeader from './components/layout/TheHeader.vue';
 import HomeView from './views/HomeView.vue';
 import TheFooter from './components/layout/TheFooter.vue';
 import { useThemeStore } from './stores/themeStore';
 
-export default {
-  name: 'App',
-  components: {
-    TheHeader,
-    HomeView,
-    TheFooter
-  },
-  setup() {
-    // Access the theme store to ensure it's initialized
-    const themeStore = useThemeStore();
-    
-    return {
-      isDark: themeStore.isDark
-    };
-  }
-}
+// Access the theme store to ensure it's initialized
+const themeStore = useThemeStore();
+const isDark = themeStore.isDark;
 </script>
 
 <style>

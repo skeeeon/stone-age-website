@@ -8,21 +8,21 @@
   </div>
 </template>
 
-<script>
+<script setup>
+import { defineAsyncComponent } from 'vue';
 import HeroSection from '../components/home/HeroSection.vue';
-import FeaturesSection from '../components/home/FeaturesSection.vue';
-import BenefitsSection from '../components/home/BenefitsSection.vue';
-import TechnicalSection from '../components/home/TechnicalSection.vue';
-import CallToAction from '../components/home/CallToAction.vue';
 
-export default {
-  name: 'HomeView',
-  components: {
-    HeroSection,
-    FeaturesSection,
-    BenefitsSection,
-    TechnicalSection,
-    CallToAction
-  }
-}
+// Lazy load components that are further down the page
+const FeaturesSection = defineAsyncComponent(() => 
+  import('../components/home/FeaturesSection.vue')
+);
+const BenefitsSection = defineAsyncComponent(() => 
+  import('../components/home/BenefitsSection.vue')
+);
+const TechnicalSection = defineAsyncComponent(() => 
+  import('../components/home/TechnicalSection.vue')
+);
+const CallToAction = defineAsyncComponent(() => 
+  import('../components/home/CallToAction.vue')
+);
 </script>

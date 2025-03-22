@@ -14,11 +14,23 @@
         <p class="text-lg sm:text-xl mb-6 sm:mb-8 text-gray-100">
           A secure, scalable, and maintainable solution built on open standards for modern enterprises.
         </p>
-        <div class="flex flex-wrap gap-3 sm:gap-4">
-          <button @click="scrollToSection('cta')" class="btn" style="background-color: white; color: var(--color-primary);">
+        <div class="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
+          <button 
+            @click="scrollToSection('cta')" 
+            class="btn w-full sm:w-auto" 
+            style="background-color: white; color: var(--color-primary);"
+            aria-label="Get Started with Stone-Age.io"
+          >
             Get Started
           </button>
-          <a href="https://github.com" class="btn btn-outlined" style="border-color: white; color: white;">
+          <a 
+            href="https://github.com" 
+            class="btn btn-outlined w-full sm:w-auto" 
+            style="border-color: white; color: white;"
+            aria-label="View Stone-Age.io on GitHub"
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
             <i class="pi pi-github mr-2"></i>
             View on GitHub
           </a>
@@ -28,26 +40,21 @@
   </section>
 </template>
 
-<script>
-export default {
-  name: 'HeroSection',
-  methods: {
-    scrollToSection(sectionId) {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        // Add a small delay to ensure any UI updates finish first
-        setTimeout(() => {
-          const headerOffset = 80; // Account for fixed header
-          const elementPosition = element.getBoundingClientRect().top;
-          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-          
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth'
-          });
-        }, 100);
-      }
-    }
+<script setup>
+const scrollToSection = (sectionId) => {
+  const element = document.getElementById(sectionId);
+  if (element) {
+    // Add a small delay to ensure any UI updates finish first
+    setTimeout(() => {
+      const headerOffset = 80; // Account for fixed header
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }, 100);
   }
-}
+};
 </script>
