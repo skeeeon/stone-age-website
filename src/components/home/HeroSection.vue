@@ -9,7 +9,7 @@
     <div class="container relative z-10">
       <div class="max-w-3xl">
         <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight text-white">
-          Open Source IoT Platform for Physical Access Control & Building Automation
+          Open Source IoT Management and Data Automation Platform 
         </h1>
         <p class="text-lg sm:text-xl mb-6 sm:mb-8 text-gray-100">
           A secure, scalable, and maintainable solution built on open standards for modern enterprises.
