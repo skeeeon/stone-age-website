@@ -1,5 +1,5 @@
 <template>
-  <section id="cta" class="py-16 md:py-24" style="background-color: #1a4481;">
+  <section id="cta" class="py-16 md:py-24" style="background-color: var(--color-primary);">
     <div class="container text-center">
       <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">Ready to Get Started?</h2>
       <p class="text-lg sm:text-xl mb-10 max-w-2xl mx-auto text-white">
