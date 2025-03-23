@@ -50,13 +50,8 @@ const isDark = computed(() => themeStore.isDark.value);
   font-weight: 700;
   font-size: 1.25rem;
   letter-spacing: -0.02em;
-  color: var(--color-primary);
   transition: color 0.3s ease;
-}
-
-/* Apply dark mode styles */
-:deep(.dark) .logo-text {
-  color: white;
+  color: v-bind('isDark ? "#FFFFFF" : "var(--color-primary)"');
 }
 
 /* Size variants */
