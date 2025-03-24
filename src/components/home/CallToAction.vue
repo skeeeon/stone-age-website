@@ -7,120 +7,40 @@
       </p>
       
       <div class="flex flex-col sm:flex-row justify-center gap-4 mb-16">
-        <a href="#" class="inline-flex items-center justify-center px-5 py-3 bg-white text-blue-800 rounded-md font-medium">
-          <i class="pi pi-file mr-2"></i>
-          View Documentation
-        </a>
-        <a href="https://github.com" class="inline-flex items-center justify-center px-5 py-3 bg-white text-blue-800 rounded-md font-medium">
-          <i class="pi pi-github mr-2"></i>
-          GitHub Repository
-        </a>
-        <a href="#" class="inline-flex items-center justify-center px-5 py-3 bg-transparent border border-white text-white rounded-md font-medium">
-          <i class="pi pi-envelope mr-2"></i>
-          Contact Sales
+        <a v-for="(button, index) in actionButtons" :key="`action-btn-${index}`"
+           :href="button.href" 
+           class="inline-flex items-center justify-center px-5 py-3 rounded-md font-medium"
+           :class="button.classes">
+          <i :class="`pi ${button.icon} mr-2`"></i>
+          {{ button.text }}
         </a>
       </div>
       
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-        <!-- Starter Plan -->
-        <div class="rounded-lg overflow-hidden shadow-lg">
+        <div v-for="(plan, index) in pricingPlans" :key="`pricing-${index}`"
+             class="rounded-lg overflow-hidden shadow-lg"
+             :class="{ 'relative transform md:scale-105 md:z-10': plan.isPopular }">
           <!-- Header -->
-          <div class="bg-gray-900 p-4 text-center">
-            <h3 class="text-2xl font-bold text-white">Starter</h3>
-            <p class="text-gray-300">For small businesses</p>
+          <div class="p-4 text-center" :class="plan.headerClass">
+            <h3 class="text-2xl font-bold text-white">{{ plan.name }}</h3>
+            <p :class="plan.subtitleClass">{{ plan.subtitle }}</p>
           </div>
           
           <!-- Content -->
           <div class="bg-gray-800 p-6 text-white">
-            <div class="text-3xl font-bold mb-6">$299<span class="text-lg font-normal">/month</span></div>
+            <div class="text-3xl font-bold mb-6" v-html="plan.price"></div>
             
             <div class="text-left space-y-4 mb-8">
-              <div class="flex items-start">
+              <div v-for="(feature, featureIndex) in plan.features" :key="`plan-${index}-feature-${featureIndex}`" 
+                   class="flex items-start">
                 <i class="pi pi-check text-green-400 mr-2 mt-1"></i>
-                <span>Up to 50 devices</span>
-              </div>
-              <div class="flex items-start">
-                <i class="pi pi-check text-green-400 mr-2 mt-1"></i>
-                <span>1 site</span>
-              </div>
-              <div class="flex items-start">
-                <i class="pi pi-check text-green-400 mr-2 mt-1"></i>
-                <span>30 days retention</span>
+                <span>{{ feature }}</span>
               </div>
             </div>
             
-            <a href="https://github.com" class="block w-full py-3 border border-gray-600 bg-gray-800 hover:bg-gray-700 text-white rounded-md font-medium text-center">
-              Get Started
-            </a>
-          </div>
-        </div>
-        
-        <!-- Business Plan (Popular) -->
-        <div class="rounded-lg overflow-hidden shadow-lg relative">
-          <!-- Popular Badge -->
-          <div class="absolute w-full" style="top: -12px; z-index: 10;">
-          </div>
-          
-          <!-- Header -->
-          <div class="bg-blue-500 p-4 text-center">
-            <h3 class="text-2xl font-bold text-white">Business</h3>
-            <p class="text-white opacity-90">For growing organizations</p>
-          </div>
-          
-          <!-- Content -->
-          <div class="bg-gray-800 p-6 text-white">
-            <div class="text-3xl font-bold mb-6">$999<span class="text-lg font-normal">/month</span></div>
-            
-            <div class="text-left space-y-4 mb-8">
-              <div class="flex items-start">
-                <i class="pi pi-check text-green-400 mr-2 mt-1"></i>
-                <span>Up to 500 devices</span>
-              </div>
-              <div class="flex items-start">
-                <i class="pi pi-check text-green-400 mr-2 mt-1"></i>
-                <span>5 sites</span>
-              </div>
-              <div class="flex items-start">
-                <i class="pi pi-check text-green-400 mr-2 mt-1"></i>
-                <span>90 days retention</span>
-              </div>
-            </div>
-            
-            <a href="https://github.com" class="block w-full py-3 bg-white hover:bg-gray-100 text-blue-600 rounded-md font-medium text-center">
-              Get Started
-            </a>
-          </div>
-        </div>
-        
-        <!-- Enterprise Plan -->
-        <div class="rounded-lg overflow-hidden shadow-lg">
-          <!-- Header -->
-          <div class="bg-gray-900 p-4 text-center">
-            <h3 class="text-2xl font-bold text-white">Enterprise</h3>
-            <p class="text-gray-300">For large organizations</p>
-          </div>
-          
-          <!-- Content -->
-          <div class="bg-gray-800 p-6 text-white">
-            <div class="text-3xl font-bold mb-6">Custom</div>
-            
-            <div class="text-left space-y-4 mb-8">
-              <div class="flex items-start">
-                <i class="pi pi-check text-green-400 mr-2 mt-1"></i>
-                <span>Custom device count</span>
-              </div>
-              <div class="flex items-start">
-                <i class="pi pi-check text-green-400 mr-2 mt-1"></i>
-                <span>Unlimited sites</span>
-              </div>
-              <div class="flex items-start">
-                <i class="pi pi-check text-green-400 mr-2 mt-1"></i>
-                <span>Custom retention</span>
-              </div>
-            </div>
-            
-            <a href="#" class="block w-full py-3 border border-gray-600 bg-gray-800 hover:bg-gray-700 text-white rounded-md font-medium text-center">
-              Contact Us
+            <a :href="plan.ctaLink" class="block w-full py-3 rounded-md font-medium text-center"
+               :class="plan.ctaClass">
+              {{ plan.ctaText }}
             </a>
           </div>
         </div>
@@ -129,8 +49,78 @@
   </section>
 </template>
 
-<script>
-export default {
-  name: 'CallToAction'
-}
+<script setup>
+// Action buttons at the top
+const actionButtons = [
+  {
+    text: 'View Documentation',
+    icon: 'pi-file',
+    href: '#',
+    classes: 'bg-white text-blue-800'
+  },
+  {
+    text: 'GitHub Repository',
+    icon: 'pi-github',
+    href: 'https://github.com',
+    classes: 'bg-white text-blue-800'
+  },
+  {
+    text: 'Contact Sales',
+    icon: 'pi-envelope',
+    href: '#',
+    classes: 'bg-transparent border border-white text-white'
+  }
+];
+
+// Pricing plans
+const pricingPlans = [
+  {
+    name: 'Starter',
+    subtitle: 'For small businesses',
+    headerClass: 'bg-gray-900',
+    subtitleClass: 'text-gray-300',
+    price: '$299<span class="text-lg font-normal">/month</span>',
+    features: [
+      'Up to 50 devices',
+      '1 site',
+      '30 days retention'
+    ],
+    ctaText: 'Get Started',
+    ctaLink: 'https://github.com',
+    ctaClass: 'border border-gray-600 bg-gray-800 hover:bg-gray-700 text-white',
+    isPopular: false
+  },
+  {
+    name: 'Business',
+    subtitle: 'For growing organizations',
+    headerClass: 'bg-blue-500',
+    subtitleClass: 'text-white opacity-90',
+    price: '$999<span class="text-lg font-normal">/month</span>',
+    features: [
+      'Up to 500 devices',
+      '5 sites',
+      '90 days retention'
+    ],
+    ctaText: 'Get Started',
+    ctaLink: 'https://github.com',
+    ctaClass: 'bg-white hover:bg-gray-100 text-blue-600',
+    isPopular: true
+  },
+  {
+    name: 'Enterprise',
+    subtitle: 'For large organizations',
+    headerClass: 'bg-gray-900',
+    subtitleClass: 'text-gray-300',
+    price: 'Custom',
+    features: [
+      'Custom device count',
+      'Unlimited sites',
+      'Custom retention'
+    ],
+    ctaText: 'Contact Us',
+    ctaLink: '#',
+    ctaClass: 'border border-gray-600 bg-gray-800 hover:bg-gray-700 text-white',
+    isPopular: false
+  }
+];
 </script>

@@ -11,7 +11,7 @@
         <div>
           <h3 class="text-2xl font-semibold mb-6">Core Architecture</h3>
           <div class="space-y-6">
-            <div v-for="(feature, index) in coreFeatures" :key="index" class="flex">
+            <div v-for="(feature, index) in coreFeatures" :key="`core-feature-${index}`" class="flex">
               <div class="mr-4 mt-1 flex-shrink-0">
                 <div class="rounded-full w-10 h-10 flex items-center justify-center text-white font-bold"
                      :style="{ backgroundColor: 'var(--color-secondary)' }">
@@ -66,30 +66,24 @@
   </section>
 </template>
 
-<script>
-export default {
-  name: 'TechnicalSection',
-  data() {
-    return {
-      coreFeatures: [
-        {
-          title: 'NATS Messaging Foundation',
-          description: 'Core messaging system with native MQTT support, standardized topic structure, and well-defined JSON message schema.'
-        },
-        {
-          title: 'FreeBSD Infrastructure',
-          description: 'Secure base operating system with ZFS filesystem for data integrity, snapshots, and resilience.'
-        },
-        {
-          title: 'Optimized Data Management',
-          description: 'PocketBase for configuration storage and current state, TimescaleDB for time-series historical data.'
-        },
-        {
-          title: 'Edge Intelligence',
-          description: 'Local processing for low latency, offline operation capabilities, and efficient synchronization.'
-        }
-      ]
-    }
+<script setup>
+// Core architecture features
+const coreFeatures = [
+  {
+    title: 'NATS Messaging Foundation',
+    description: 'Core messaging system with native MQTT support, standardized topic structure, and well-defined JSON message schema.'
+  },
+  {
+    title: 'FreeBSD Infrastructure',
+    description: 'Secure base operating system with ZFS filesystem for data integrity, snapshots, and resilience.'
+  },
+  {
+    title: 'Optimized Data Management',
+    description: 'PocketBase for configuration storage and current state, TimescaleDB for time-series historical data.'
+  },
+  {
+    title: 'Edge Intelligence',
+    description: 'Local processing for low latency, offline operation capabilities, and efficient synchronization.'
   }
-}
+];
 </script>

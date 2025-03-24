@@ -11,22 +11,10 @@
         <div>
           <h4 class="text-lg font-semibold mb-4">Product</h4>
           <ul class="space-y-3">
-            <li>
-              <a href="#features" 
+            <li v-for="(link, index) in productLinks" :key="`product-${index}`">
+              <a :href="link.href" 
                  class="text-gray-300 hover:text-white transition-colors block py-1">
-                Features
-              </a>
-            </li>
-            <li>
-              <a href="#" 
-                 class="text-gray-300 hover:text-white transition-colors block py-1">
-                Documentation
-              </a>
-            </li>
-            <li>
-              <a href="#" 
-                 class="text-gray-300 hover:text-white transition-colors block py-1">
-                Pricing
+                {{ link.text }}
               </a>
             </li>
           </ul>
@@ -34,22 +22,10 @@
         <div>
           <h4 class="text-lg font-semibold mb-4">Resources</h4>
           <ul class="space-y-3">
-            <li>
-              <a href="#github" 
+            <li v-for="(link, index) in resourceLinks" :key="`resource-${index}`">
+              <a :href="link.href" 
                  class="text-gray-300 hover:text-white transition-colors block py-1">
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="#" 
-                 class="text-gray-300 hover:text-white transition-colors block py-1">
-                Documentation
-              </a>
-            </li>
-            <li>
-              <a href="#" 
-                 class="text-gray-300 hover:text-white transition-colors block py-1">
-                Blog
+                {{ link.text }}
               </a>
             </li>
           </ul>
@@ -57,22 +33,10 @@
         <div>
           <h4 class="text-lg font-semibold mb-4">Contact</h4>
           <ul class="space-y-3">
-            <li>
-              <a href="#" 
+            <li v-for="(link, index) in contactLinks" :key="`contact-${index}`">
+              <a :href="link.href" 
                  class="text-gray-300 hover:text-white transition-colors block py-1">
-                Contact Us
-              </a>
-            </li>
-            <li>
-              <a href="#" 
-                 class="text-gray-300 hover:text-white transition-colors block py-1">
-                Support
-              </a>
-            </li>
-            <li>
-              <a href="#" 
-                 class="text-gray-300 hover:text-white transition-colors block py-1">
-                Twitter
+                {{ link.text }}
               </a>
             </li>
           </ul>
@@ -85,8 +49,23 @@
   </footer>
 </template>
 
-<script>
-export default {
-  name: 'TheFooter'
-}
+<script setup>
+// Define link data using composition API
+const productLinks = [
+  { text: 'Features', href: '#features' },
+  { text: 'Documentation', href: '#' },
+  { text: 'Pricing', href: '#' }
+];
+
+const resourceLinks = [
+  { text: 'GitHub', href: '#github' },
+  { text: 'Documentation', href: '#' },
+  { text: 'Blog', href: '#' }
+];
+
+const contactLinks = [
+  { text: 'Contact Us', href: '#' },
+  { text: 'Support', href: '#' },
+  { text: 'Twitter', href: '#' }
+];
 </script>

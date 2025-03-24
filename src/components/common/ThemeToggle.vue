@@ -16,19 +16,9 @@
   </button>
 </template>
 
-<script>
-import { computed } from 'vue';
+<script setup>
 import { useThemeStore } from '@/stores/themeStore';
 
-export default {
-  name: 'ThemeToggle',
-  setup() {
-    const themeStore = useThemeStore();
-    
-    return {
-      isDark: themeStore.isDark,
-      toggleTheme: themeStore.toggleTheme
-    };
-  }
-}
+const themeStore = useThemeStore();
+const { isDark, toggleTheme } = themeStore;
 </script>
