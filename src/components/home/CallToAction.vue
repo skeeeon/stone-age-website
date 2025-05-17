@@ -1,9 +1,9 @@
 <template>
   <section id="cta" class="py-16 md:py-24 dark-section" :style="{ backgroundColor: 'var(--color-primary)' }">
     <div class="container text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">Ready to Get Started?</h2>
+      <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">Start Building with Stone-Age.io</h2>
       <p class="text-lg sm:text-xl mb-10 max-w-2xl mx-auto text-white">
-        Join us in building the future of physical access control and building automation with an open source approach.
+        Join our open source community or get commercial support to build powerful IoT applications with confidence.
       </p>
       
       <!-- Action buttons -->
@@ -41,10 +41,15 @@
 <script setup>
 import PricingCard from '../pricing/PricingCard.vue';
 
-// Action buttons at the top
+/**
+ * CallToAction component with pricing plans and CTA buttons
+ * Displays pricing options and calls-to-action for different user segments
+ */
+
+// Action buttons at the top - updated for open source focus
 const actionButtons = [
   {
-    text: 'View Documentation',
+    text: 'Read Documentation',
     icon: 'pi-file',
     href: '#',
     classes: 'bg-white text-blue-800 hover:bg-gray-100'
@@ -63,7 +68,7 @@ const actionButtons = [
   }
 ];
 
-// Pricing plans with consistent properties
+// Pricing plans with consistent properties - keeping as is per request
 const pricingPlans = [
   {
     name: 'Community',

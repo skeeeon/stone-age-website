@@ -1,6 +1,11 @@
 // src/stores/theme.js
 import { reactive, computed } from 'vue';
 
+/**
+ * Theme store for managing application theme
+ * Uses reactive state to manage theme preferences
+ */
+
 // Create a reactive state object
 const state = reactive({
   theme: 'auto', // Can be 'light', 'dark', or 'auto'
@@ -8,8 +13,8 @@ const state = reactive({
 });
 
 /**
- * Theme store for managing application theme
- * Supports light, dark, and auto (system preference) modes
+ * Creates and returns the theme store
+ * @returns {Object} Theme store with state and methods
  */
 export const useThemeStore = () => {
   // Computed property to get the current theme
@@ -20,11 +25,13 @@ export const useThemeStore = () => {
    * Sets up listeners for system preference changes
    */
   const initTheme = () => {
+    // Skip if already initialized
     if (state.isInitialized) return;
 
-    // Check for saved theme preference
+    // Get saved theme from localStorage
     const savedTheme = localStorage.getItem('theme');
     
+    // Validate theme value
     if (savedTheme === 'dark' || savedTheme === 'light' || savedTheme === 'auto') {
       state.theme = savedTheme;
     } else {
@@ -48,6 +55,7 @@ export const useThemeStore = () => {
    * @param {string} theme - The theme to set ('light', 'dark', or 'auto')
    */
   const setTheme = (theme) => {
+    // Validate theme value
     if (theme !== 'light' && theme !== 'dark' && theme !== 'auto') {
       console.warn(`Invalid theme: ${theme}. Must be 'light', 'dark', or 'auto'.`);
       return;
@@ -65,6 +73,7 @@ export const useThemeStore = () => {
 
   /**
    * Toggle between light, dark, and auto themes
+   * Cycles through themes in order: light -> dark -> auto -> light
    */
   const toggleTheme = () => {
     if (state.theme === 'light') {
@@ -85,17 +94,16 @@ export const useThemeStore = () => {
 
   /**
    * Apply the theme to the document
-   * This is handled by the useTheme composable
-   * but we trigger an event to ensure theme is applied
+   * This emits an event that will be caught by useTheme composable
    */
   const applyTheme = () => {
-    // The actual application of theme is managed by useTheme composable
-    // We just need to make sure the event is dispatched
+    // Dispatch event for theme changes
     window.dispatchEvent(new CustomEvent('theme-changed', { 
       detail: { theme: state.theme } 
     }));
   };
 
+  // Return public API
   return {
     theme: currentTheme,
     initTheme,

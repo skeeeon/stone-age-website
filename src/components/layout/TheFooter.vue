@@ -53,8 +53,8 @@
 // Define link data using composition API
 const productLinks = [
   { text: 'Features', href: '#features' },
-  { text: 'Documentation', href: '#' },
-  { text: 'Pricing', href: '#' }
+  { text: 'Benefits', href: '#benefits' },
+  { text: 'Technology', href: '#technology' }
 ];
 
 const resourceLinks = [

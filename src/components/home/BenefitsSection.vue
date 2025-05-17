@@ -3,7 +3,7 @@
     <div class="container">
       <h2 class="section-title text-center text-white">Why Choose Stone-Age.io?</h2>
       <p class="section-subtitle text-center text-gray-300">
-        Our open source approach combined with enterprise-grade reliability delivers unique advantages for businesses of all sizes.
+        Our open source approach combined with flexible deployment options provides exceptional advantages for all IoT applications.
       </p>
       
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mt-12 md:mt-16">
@@ -35,7 +35,12 @@
 </template>
 
 <script setup>
-// Define data directly in the setup scope
+/**
+ * Benefits section component
+ * Highlights the key advantages of using Stone-Age.io platform
+ */
+
+// Background colors for icons - blue gradient
 const iconBgColors = [
   '#4361ee', // Blue for code
   '#3a86ff', // Blue for shield
@@ -43,6 +48,7 @@ const iconBgColors = [
   '#4cc9f0'  // Blue for dollar
 ];
 
+// Benefits data with clear, concise points
 const benefits = [
   {
     icon: 'pi pi-code',
@@ -50,9 +56,9 @@ const benefits = [
     description: 'Our open source model provides full visibility and flexibility:',
     points: [
       'Core platform under MIT or BSD license',
-      'Full transparency of code base',
+      'Complete code transparency',
       'Community contribution model',
-      'No vendor lock-in'
+      'No vendor lock-in with extensible architecture'
     ]
   },
   {
@@ -61,31 +67,31 @@ const benefits = [
     description: 'Built with security at its core:',
     points: [
       'TLS for all connections',
-      'OAuth2 integration with identity providers',
-      'Topic-level access control',
-      'Role-based permissions'
+      'OAuth2 integration with enterprise identity providers',
+      'Topic-level access control and permission management',
+      'Secure credential storage and data protection'
     ]
   },
   {
     icon: 'pi pi-server',
-    title: 'Lightweight Go Architecture',
-    description: 'Designed for reliability and performance:',
+    title: 'Flexible Deployment',
+    description: 'Choose the environment that works for you:',
     points: [
-      'Efficient Go microservices for minimal resource usage',
-      'Container-optimized deployment for any environment',
-      'Immutable infrastructure deployment',
-      'Edge processing with offline operation'
+      'FreeBSD preferred for best stability and performance',
+      'Full support for Linux and container environments',
+      'Edge-based deployment for multi-site installations',
+      'Resilient to connectivity issues with offline operation'
     ]
   },
   {
     icon: 'pi pi-dollar',
-    title: 'Cost-Effective Solution',
-    description: 'Lower total cost of ownership:',
+    title: 'Commercial Support',
+    description: 'Production-ready with professional backing:',
     points: [
-      'Free self-hosted option available',
-      'Tiered subscription model to fit your needs',
-      'Flexible deployment options',
-      'Pay only for what you need'
+      'Free self-hosted community edition',
+      'Tiered commercial support plans',
+      'Professional implementation services',
+      'Training and certification programs'
     ]
   }
 ];
@@ -93,8 +99,8 @@ const benefits = [
 
 <style scoped>
 .dark-card {
-  background-color: #1a1d36;
-  border: none;
+  @apply bg-gray-900 border-none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .dark-card:hover {
@@ -103,11 +109,10 @@ const benefits = [
 }
 
 .dark-card-header {
-  background-color: #131631;
-  border-bottom: 1px solid rgba(75, 85, 99, 0.4);
+  @apply bg-gray-800 border-b border-gray-700;
 }
 
 .dark-card-body {
-  color: #e5e7eb;
+  @apply text-gray-200;
 }
 </style>

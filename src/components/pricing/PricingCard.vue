@@ -3,7 +3,7 @@
     class="pricing-card" 
     :class="{ 'pricing-card-popular': isPopular }"
   >
-    <!-- Popular badge (optional) -->
+    <!-- Popular badge (conditional rendering) -->
     <div v-if="isPopular" class="pricing-badge">
       Popular
     </div>
@@ -16,7 +16,7 @@
     
     <!-- Card content -->
     <div class="pricing-card-body">
-      <!-- Price -->
+      <!-- Price with v-html for formatting -->
       <div class="pricing-price" v-html="price"></div>
       
       <!-- Features list -->
@@ -38,43 +38,87 @@
 </template>
 
 <script setup>
+/**
+ * Pricing Card Component
+ * Displays a pricing plan with features and call-to-action
+ */
+
 defineProps({
+  /**
+   * Name of the pricing plan
+   */
   name: {
     type: String,
     required: true
   },
+  
+  /**
+   * Subtitle or short description of the plan
+   */
   subtitle: {
     type: String,
     default: ''
   },
+  
+  /**
+   * Price display (can include HTML for formatting)
+   */
   price: {
     type: String,
     required: true
   },
+  
+  /**
+   * Array of features included in the plan
+   */
   features: {
     type: Array,
     default: () => []
   },
+  
+  /**
+   * Text for the call-to-action button
+   */
   ctaText: {
     type: String,
     default: 'Get Started'
   },
+  
+  /**
+   * Link for the call-to-action button
+   */
   ctaLink: {
     type: String,
     default: '#'
   },
+  
+  /**
+   * CSS classes for the call-to-action button
+   */
   ctaClass: {
     type: String,
     default: ''
   },
+  
+  /**
+   * Background color for the card header
+   */
   headerBgColor: {
     type: String,
     default: '#1f2937' // Default dark gray
   },
+  
+  /**
+   * CSS classes for the subtitle text
+   */
   subtitleClass: {
     type: String,
     default: 'text-gray-300'
   },
+  
+  /**
+   * Whether this is the featured/popular plan
+   */
   isPopular: {
     type: Boolean,
     default: false

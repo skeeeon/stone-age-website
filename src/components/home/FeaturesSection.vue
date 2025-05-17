@@ -3,8 +3,8 @@
     <div class="container">
       <h2 class="section-title text-center">Enterprise IoT Made Simple</h2>
       <p class="section-subtitle text-center">
-        Stone-Age.io provides a comprehensive platform that addresses critical enterprise IoT needs
-        while remaining accessible to mid-market organizations.
+        Stone-Age.io provides a comprehensive platform for diverse IoT applications,
+        suitable for organizations of all sizes with flexible deployment options.
       </p>
       
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mt-12 md:mt-16">
@@ -25,37 +25,42 @@
 </template>
 
 <script setup>
+/**
+ * Features section component
+ * Displays a grid of key platform features with icons
+ */
+
 // Define features directly in the setup scope
 const features = [
   {
     icon: 'pi pi-shield',
     title: 'Physical Access Control',
-    description: 'Manage building access with credential assignments, access rules, and event logging. Includes emergency lockdown capabilities.'
+    description: 'Manage building access with credential assignments, access rules, and comprehensive event logging. Includes emergency lockdown capabilities.'
   },
   {
     icon: 'pi pi-cog',
     title: 'Building Automation',
-    description: 'Integrate with HVAC, lighting systems and more. Create automation rules for resource optimization.'
+    description: 'Integrate with HVAC, lighting systems and more. Create automation rules for resource optimization and scheduling.'
   },
   {
     icon: 'pi pi-chart-line',
     title: 'Environmental Monitoring',
-    description: 'Track temperature, humidity, occupancy, and air quality metrics with support for custom sensors.'
+    description: 'Track temperature, humidity, occupancy, and air quality metrics with support for custom sensors and real-time alerts.'
   },
   {
-    icon: 'pi pi-server',
-    title: 'Lightweight Go Architecture',
-    description: 'Efficient Go microservices that run everywhere - from small edge devices to large cloud infrastructures.'
+    icon: 'pi pi-sitemap',
+    title: 'Industrial IoT Applications',
+    description: 'Monitor production lines, track assets, and automate workflows in manufacturing environments with secure device management.'
   },
   {
     icon: 'pi pi-chart-bar',
     title: 'Analytics & Reporting',
-    description: 'Real-time dashboards, historical trend analysis, custom reports, and anomaly detection.'
+    description: 'Real-time dashboards, historical trend analysis, custom reports, and anomaly detection with compliance documentation.'
   },
   {
     icon: 'pi pi-link',
     title: 'Integration Capabilities',
-    description: 'Connect with HR systems, visitor management, SIEM, and building management systems via APIs and webhooks.'
+    description: 'Connect with enterprise systems via RESTful APIs, webhooks, and event streams. Adapters for popular platforms included.'
   }
 ];
 </script>

@@ -3,8 +3,8 @@
     <div class="container">
       <h2 class="section-title text-center">Technical Foundation</h2>
       <p class="section-subtitle text-center">
-        Built on modern technologies with an architecture designed for scalability, 
-        security, and performance.
+        Built with flexibility in mind, our architecture adapts to your environment while
+        maintaining security and performance.
       </p>
       
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12 md:mt-16">
@@ -82,23 +82,28 @@
 </template>
 
 <script setup>
-// Core architecture features
+/**
+ * Technical section component
+ * Highlights the technical architecture and key technical differentiators
+ */
+
+// Core architecture features emphasizing platform flexibility
 const coreFeatures = [
   {
     title: 'NATS Messaging Foundation',
-    description: 'Core messaging system with native MQTT support, standardized topic structure, and well-defined JSON message schema.'
+    description: 'Core messaging system with native MQTT support, standardized topic structure, and well-defined JSON message schema for seamless device communication.'
   },
   {
-    title: 'Lightweight Go Microservices',
-    description: 'Efficient, performant Go-based services that consume minimal resources and scale horizontally across environments.'
+    title: 'Go Microservices Architecture',
+    description: 'Lightweight, efficient Go services for minimal resource usage and maximum performance. Deployable across FreeBSD, Linux, and containers.'
   },
   {
     title: 'Optimized Data Management',
-    description: 'PocketBase for configuration storage and current state, TimescaleDB for time-series historical data.'
+    description: 'PocketBase for configuration storage and current state, TimescaleDB for time-series historical data with efficient retention policies.'
   },
   {
     title: 'Edge Intelligence',
-    description: 'Containerized Go services at the edge for low latency, offline operation capabilities, and efficient synchronization.'
+    description: 'Local processing at installation sites supporting offline operation with credential caching and incremental synchronization when reconnected.'
   }
 ];
 
@@ -106,18 +111,18 @@ const coreFeatures = [
 const additionalFeatures = [
   {
     icon: 'pi pi-shield',
-    title: 'Security First',
-    description: 'End-to-end encryption, secure credential management, and comprehensive authorization controls.'
+    title: 'Comprehensive Security',
+    description: 'TLS encryption, client certificate authentication, role-based access control, and secure credential storage.'
   },
   {
     icon: 'pi pi-sync',
-    title: 'Seamless Integration',
-    description: 'Open APIs, webhooks, and extensible plugins for integration with existing enterprise systems.'
+    title: 'Multi-Deployment Options',
+    description: 'Run on FreeBSD (preferred), Linux, or in containers. Flexible deployment to match your infrastructure requirements.'
   },
   {
-    icon: 'pi pi-chart-bar',
-    title: 'Advanced Analytics',
-    description: 'Real-time dashboards, historical reporting, and anomaly detection with machine learning capabilities.'
+    icon: 'pi pi-server',
+    title: 'Open Source Core',
+    description: 'Fully open source core system with commercial support options. Transparent development with community contributions.'
   }
 ];
 </script>

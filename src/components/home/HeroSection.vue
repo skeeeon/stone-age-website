@@ -9,10 +9,11 @@
     <div class="container relative z-10">
       <div class="max-w-3xl">
         <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight text-white">
-          Open Source IoT Management and Data Automation Platform 
+          Open Source IoT Platform for Enterprise Operations
         </h1>
         <p class="text-lg sm:text-xl mb-6 sm:mb-8 text-gray-100">
-          A secure, scalable, and efficient solution built on lightweight Go microservices for modern enterprises.
+          A secure, scalable platform built on NATS messaging and efficient Go microservices, 
+          deployable on FreeBSD, Linux, or containers for diverse IoT applications.
         </p>
         <div class="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
           <button 
@@ -41,6 +42,15 @@
 </template>
 
 <script setup>
+/**
+ * Hero section component for the landing page
+ * Displays the main headline, description, and primary call-to-action buttons
+ */
+
+/**
+ * Scrolls to the specified section with smooth scrolling
+ * @param {string} sectionId - The ID of the section to scroll to
+ */
 const scrollToSection = (sectionId) => {
   const element = document.getElementById(sectionId);
   if (element) {

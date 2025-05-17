@@ -10,18 +10,31 @@ import './assets/css/tailwind.css';
 // Import theme store
 import { useThemeStore } from './stores/theme';
 
-const app = createApp(App);
+/**
+ * Initialize Vue app with Stone-Age.io configuration
+ */
+const initApp = () => {
+  // Create app instance
+  const app = createApp(App);
+  
+  // Configure PrimeVue
+  app.use(PrimeVue, {
+    ripple: true,  // Enable ripple effect
+    inputStyle: 'filled'  // Use filled input style
+  });
+  
+  // Initialize theme before mounting to prevent flash
+  const themeStore = useThemeStore();
+  themeStore.initTheme();
+  
+  // Mount app
+  app.mount('#app');
+  
+  return app;
+};
 
-// Use PrimeVue
-app.use(PrimeVue, {
-  ripple: true,
-  inputStyle: 'filled'
-});
+// Initialize the app
+const app = initApp();
 
-// Initialize the theme
-const themeStore = useThemeStore();
-
-// Initialize theme before mounting the app to prevent flash
-themeStore.initTheme();
-
-app.mount('#app');
+// Export app instance for potential testing or extension
+export { app };
