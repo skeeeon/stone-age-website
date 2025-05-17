@@ -1,24 +1,42 @@
 <template>
-  <button 
-    @click="toggleTheme" 
-    class="relative inline-flex items-center justify-center h-10 w-10 rounded-full overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 transition-colors"
-    :style="{ 
-      backgroundColor: isDark ? 'var(--color-surface-alt)' : 'rgba(31, 75, 142, 0.1)', 
-      color: isDark ? '#FFD700' : 'var(--color-primary)' 
-    }"
-    aria-label="Toggle dark mode"
-  >
-    <!-- Icon transition -->
-    <transition name="theme-toggle" mode="out-in">
-      <i v-if="isDark" class="pi pi-moon text-xl"></i>
-      <i v-else class="pi pi-sun text-xl"></i>
-    </transition>
-  </button>
+  <div class="flex items-center space-x-1">
+    <button 
+      @click="toggleMode" 
+      class="relative inline-flex items-center justify-center h-10 w-10 rounded-full overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 transition-colors"
+      :style="{ 
+        backgroundColor: isDarkMode ? 'var(--color-surface-tertiary)' : 'rgba(var(--color-primary-rgb), 0.1)', 
+        color: isDarkMode ? '#FFD700' : 'var(--color-primary)' 
+      }"
+      aria-label="Toggle theme"
+    >
+      <!-- Icon transition -->
+      <transition name="theme-toggle" mode="out-in">
+        <i v-if="isDarkMode" class="pi pi-moon text-xl"></i>
+        <i v-else-if="currentTheme === 'light'" class="pi pi-sun text-xl"></i>
+        <i v-else class="pi pi-desktop text-xl"></i>
+      </transition>
+    </button>
+    
+    <!-- Theme label (optional, can be hidden on mobile) -->
+    <span class="text-sm hidden md:inline">{{ themeLabel }}</span>
+  </div>
 </template>
 
 <script setup>
-import { useThemeStore } from '@/stores/themeStore';
+import { computed } from 'vue';
+import { useTheme } from '@/composables/useTheme';
 
-const themeStore = useThemeStore();
-const { isDark, toggleTheme } = themeStore;
+const { currentTheme, isDarkMode, toggleTheme } = useTheme();
+
+// Toggle between light, dark, and system themes
+const toggleMode = () => {
+  toggleTheme();
+};
+
+// Computed property for the theme label
+const themeLabel = computed(() => {
+  if (currentTheme.value === 'light') return 'Light';
+  if (currentTheme.value === 'dark') return 'Dark';
+  return 'Auto';
+});
 </script>

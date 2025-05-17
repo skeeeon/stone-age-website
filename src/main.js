@@ -3,12 +3,12 @@ import App from './App.vue';
 import PrimeVue from 'primevue/config';
 
 // Import styles
-import 'primevue/resources/themes/lara-light-blue/theme.css';
+import 'primevue/resources/primevue.min.css';
 import 'primeicons/primeicons.css';
 import './assets/css/tailwind.css';
 
 // Import theme store
-import { useThemeStore } from './stores/themeStore';
+import { useThemeStore } from './stores/theme';
 
 const app = createApp(App);
 

@@ -5,19 +5,42 @@
 
 :root {
   /* Brand Colors */
-  --color-primary: #1F4B8E;
-  --color-secondary: #00A3E0;
-  --color-accent: #FFB81C;
+  --color-primary-50: #f0f9ff;
+  --color-primary-100: #e0f2fe;
+  --color-primary-200: #bae6fd;
+  --color-primary-300: #7dd3fc;
+  --color-primary-400: #38bdf8;
+  --color-primary-500: #0ea5e9;
+  --color-primary-600: #0284c7;
+  --color-primary-700: #0369a1;
+  --color-primary-800: #075985;
+  --color-primary-900: #0c4a6e;
+  --color-primary-950: #082f49;
   
   /* UI Colors - Light Mode */
-  --color-text: #333333;
-  --color-text-light: #717171;
+  --color-surface-primary: #ffffff;
+  --color-surface-secondary: #f9fafb;
+  --color-surface-tertiary: #f3f4f6;
+  --color-surface-hover: #f3f3f6;
+  
+  --color-content-primary: #111827;
+  --color-content-secondary: #4b5563;
+  
+  --color-border-primary: #e5e7eb;
+  --color-border-secondary: #f3f4f6;
+  
+  /* Legacy variables for compatibility */
+  --color-primary: var(--color-primary-700);
+  --color-secondary: var(--color-primary-500);
+  --color-accent: #FFB81C;
+  --color-text: var(--color-content-primary);
+  --color-text-light: var(--color-content-secondary);
   --color-text-inverse: #FFFFFF;
-  --color-background: #FFFFFF;
-  --color-background-alt: #F5F7FA;
-  --color-surface: #FFFFFF;
-  --color-surface-alt: #F5F7FA;
-  --color-border: #E5E7EB;
+  --color-background: var(--color-surface-primary);
+  --color-background-alt: var(--color-surface-secondary);
+  --color-surface: var(--color-surface-primary);
+  --color-surface-alt: var(--color-surface-secondary);
+  --color-border: var(--color-border-primary);
   
   /* Success/Error states */
   --color-success: #22C55E;
@@ -31,15 +54,27 @@
 
 /* Dark mode overrides */
 .dark {
-  --color-text: #E6E6E6;
-  --color-text-light: #A3A3A3;
-  --color-background: #121212;
-  --color-background-alt: #1A1A1A;
-  --color-surface: #1E1E1E;
-  --color-surface-alt: #2A2A2A;
-  --color-border: #333333;
+  /* UI Colors - Dark Mode */
+  --color-surface-primary: #1f2937;
+  --color-surface-secondary: #111827;
+  --color-surface-tertiary: #374151;
+  --color-surface-hover: #374151;
   
-  /* Keep brand colors consistent in dark mode */
+  --color-content-primary: #f9fafb;
+  --color-content-secondary: #9ca3af;
+  
+  --color-border-primary: #4b5563;
+  --color-border-secondary: #374151;
+  
+  /* Legacy variables for compatibility */
+  --color-text: var(--color-content-primary);
+  --color-text-light: var(--color-content-secondary);
+  --color-background: var(--color-surface-primary);
+  --color-background-alt: var(--color-surface-secondary);
+  --color-surface: var(--color-surface-primary);
+  --color-surface-alt: var(--color-surface-secondary);
+  --color-border: var(--color-border-primary);
+  
   /* Update shadows for dark mode */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
@@ -49,8 +84,8 @@
 /* Typography */
 body {
   @apply font-sans text-base antialiased;
-  color: var(--color-text);
-  background-color: var(--color-background);
+  color: var(--color-content-primary);
+  background-color: var(--color-surface-primary);
   transition: color 0.3s, background-color 0.3s;
 }
 
@@ -61,18 +96,18 @@ body {
 
 .section-title {
   @apply text-2xl sm:text-3xl md:text-4xl font-bold mb-6 md:mb-8;
-  color: var(--color-text);
+  color: var(--color-content-primary);
 }
 
 .section-subtitle {
   @apply text-lg sm:text-xl font-medium mb-8 md:mb-12 max-w-3xl mx-auto;
-  color: var(--color-text-light);
+  color: var(--color-content-secondary);
 }
 
 /* Card Styles */
 .card {
   @apply rounded-lg overflow-hidden;
-  background-color: var(--color-surface);
+  background-color: var(--color-surface-primary);
   box-shadow: var(--shadow-md);
   transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
 }
@@ -84,8 +119,8 @@ body {
 
 .card-header {
   @apply p-5 border-b;
-  background-color: var(--color-surface-alt);
-  border-color: var(--color-border);
+  background-color: var(--color-surface-secondary);
+  border-color: var(--color-border-primary);
 }
 
 .card-body {
@@ -95,7 +130,7 @@ body {
 /* Feature Card */
 .feature-card {
   @apply p-5 sm:p-6 rounded-lg hover:shadow-lg;
-  background-color: var(--color-surface);
+  background-color: var(--color-surface-primary);
   box-shadow: var(--shadow-md);
   transition: all 0.3s ease;
 }
@@ -118,7 +153,7 @@ body {
 }
 
 .btn-primary:hover {
-  background-color: color-mix(in srgb, var(--color-primary) 90%, #000000);
+  background-color: var(--color-primary-800);
 }
 
 .btn-outlined {
@@ -138,6 +173,13 @@ body {
 
 .dark .btn-outlined:hover {
   background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Theme transition for smooth color changes */
+.theme-transition {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: ease;
+  transition-duration: 0.2s;
 }
 
 /* PrimeVue Override Styles */
@@ -180,14 +222,14 @@ body {
 /* Pricing cards */
 .pricing-card {
   @apply rounded-lg overflow-hidden transition-all;
-  background-color: var(--color-surface);
+  background-color: var(--color-surface-primary);
   box-shadow: var(--shadow-md);
 }
 
 .pricing-card-header {
   @apply p-5 border-b;
-  background-color: var(--color-surface-alt);
-  border-color: var(--color-border);
+  background-color: var(--color-surface-secondary);
+  border-color: var(--color-border-primary);
 }
 
 .pricing-card-body {
@@ -203,4 +245,23 @@ body {
 .pricing-card-popular .pricing-card-header {
   background-color: var(--color-secondary);
   color: var(--color-text-inverse);
+}
+
+/* Focus styles for accessibility */
+a:focus-visible, 
+button:focus-visible, 
+input:focus-visible, 
+select:focus-visible, 
+textarea:focus-visible {
+  @apply outline-none ring-2 ring-primary-500 ring-offset-2;
+  @apply dark:ring-primary-400 dark:ring-offset-gray-800;
+}
+
+/* Helper classes */
+.dark-mode-hidden {
+  @apply block dark:hidden;
+}
+  
+.light-mode-hidden {
+  @apply hidden dark:block;
 }

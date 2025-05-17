@@ -12,11 +12,10 @@
 import TheHeader from './components/layout/TheHeader.vue';
 import HomeView from './views/HomeView.vue';
 import TheFooter from './components/layout/TheFooter.vue';
-import { useThemeStore } from './stores/themeStore';
+import { useTheme } from './composables/useTheme';
 
-// Access the theme store to ensure it's initialized
-const themeStore = useThemeStore();
-const isDark = themeStore.isDark;
+// Access the theme composable to ensure it's initialized
+const { isDarkMode } = useTheme();
 </script>
 
 <style>
