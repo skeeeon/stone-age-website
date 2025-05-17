@@ -1,0 +1,98 @@
+/* 
+ * Stone-Age.io Technical Section Cards
+ * Shared styling for technical cards across the application
+ */
+
+/* Base technical card styling */
+.tech-card {
+  @apply rounded-lg overflow-hidden shadow-md flex flex-col h-full;
+  background-color: var(--color-surface-primary);
+  transition: all 0.3s ease;
+}
+
+.tech-card:hover {
+  @apply shadow-lg;
+  transform: translateY(-3px);
+}
+
+/* Card sections */
+.tech-card-header {
+  @apply p-5 border-b;
+  background-color: var(--color-surface-secondary);
+  border-color: var(--color-border-primary);
+}
+
+.tech-card-body {
+  @apply p-5 flex-grow;
+}
+
+/* Feature item styling */
+.feature-item {
+  @apply flex items-start mb-6 last:mb-0;
+}
+
+.feature-icon {
+  @apply mr-4 mt-1 flex-shrink-0 rounded-full w-10 h-10 flex items-center justify-center text-white font-bold;
+  background-color: var(--color-secondary);
+}
+
+.feature-content {
+  @apply flex-grow;
+}
+
+.feature-title {
+  @apply text-lg font-medium mb-2;
+  color: var(--color-content-primary);
+}
+
+.feature-description {
+  color: var(--color-content-secondary);
+}
+
+/* Code block styling */
+.code-block {
+  @apply font-mono text-xs sm:text-sm p-4 overflow-auto;
+  background-color: #131631;
+  color: #f8f8f2;
+  max-height: 400px;
+}
+
+.dark .code-block {
+  background-color: #0d1117;
+}
+
+.topic-structure {
+  @apply px-2 py-1 rounded text-sm inline-block;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.dark .topic-structure {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Small feature cards */
+.tech-feature-card {
+  @apply p-5 sm:p-6 rounded-lg flex flex-col h-full;
+  background-color: var(--color-surface-primary);
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+}
+
+.tech-feature-card:hover {
+  @apply shadow-lg;
+  transform: translateY(-3px);
+}
+
+.tech-feature-icon {
+  @apply text-3xl mb-4;
+  color: var(--color-primary);
+}
+
+.tech-feature-title {
+  @apply text-lg font-medium mb-2;
+  color: var(--color-content-primary);
+}
+
+.tech-feature-description {
+  color: var(--color-content-secondary);
+}

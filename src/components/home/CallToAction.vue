@@ -89,8 +89,8 @@ const pricingPlans = [
     subtitleClass: 'text-gray-300',
     price: '$199<span class="text-lg font-normal">/month</span>',
     features: [
-      'Up to 2 edge installations',
-      'Email and Phone support',
+      'Up to 25 edge installations',
+      'Email support',
       '30 days data retention',
       'Standard SLA'
     ],
@@ -106,7 +106,7 @@ const pricingPlans = [
     subtitleClass: 'text-white opacity-90',
     price: '$499<span class="text-lg font-normal">/month</span>',
     features: [
-      'Up to 10 edge installations',
+      'Up to 100 edge installations',
       'Priority support',
       '90 days data retention',
       'Enhanced SLA'

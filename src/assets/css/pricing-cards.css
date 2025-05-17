@@ -1,0 +1,93 @@
+/* 
+ * Stone-Age.io Pricing Cards
+ * Shared styling for pricing cards across the application
+ */
+
+.pricing-container {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 max-w-6xl mx-auto;
+}
+
+/* Base card styling */
+.pricing-card {
+  @apply rounded-lg overflow-hidden shadow-lg transition-all duration-300 flex flex-col h-full;
+  background-color: var(--color-surface-primary);
+}
+
+/* Dark section override */
+.dark-section .pricing-card {
+  background-color: #1a1d36; /* Dark blue background */
+}
+
+/* Card header styling */
+.pricing-card-header {
+  @apply p-4 text-center border-b;
+  background-color: var(--color-surface-secondary);
+  border-color: var(--color-border-primary);
+}
+
+.dark-section .pricing-card-header {
+  background-color: #131631; /* Darker header for dark sections */
+  border-color: rgba(75, 85, 99, 0.4);
+}
+
+/* Card body styling */
+.pricing-card-body {
+  @apply p-6 flex-grow flex flex-col;
+  color: var(--color-content-primary);
+}
+
+.dark-section .pricing-card-body {
+  color: #e5e7eb; /* Light gray text for dark sections */
+}
+
+/* Price styling */
+.pricing-price {
+  @apply text-2xl sm:text-3xl font-bold mb-6 text-center;
+}
+
+/* Feature list styling */
+.pricing-features {
+  @apply text-left space-y-4 mb-8 flex-grow;
+}
+
+.pricing-feature {
+  @apply flex items-start;
+}
+
+.pricing-feature-icon {
+  @apply text-green-500 dark:text-green-400 mr-2 mt-1 flex-shrink-0;
+}
+
+/* CTA button styling */
+.pricing-cta {
+  @apply block w-full py-3 rounded-md font-medium text-center transition-colors mt-auto;
+}
+
+/* Popular card styling */
+.pricing-card-popular {
+  @apply relative z-10;
+  box-shadow: var(--shadow-lg);
+}
+
+/* Apply scale effect only on larger screens */
+@media (min-width: 768px) {
+  .pricing-card-popular {
+    @apply transform scale-105;
+  }
+}
+
+/* Hover effects */
+.pricing-card:hover {
+  @apply shadow-xl;
+  transform: translateY(-5px);
+}
+
+/* Don't double-transform the popular card */
+.pricing-card-popular:hover {
+  transform: translateY(-5px) scale(1.05);
+}
+
+/* Popular plan badge */
+.pricing-badge {
+  @apply absolute top-0 right-0 bg-primary-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg;
+}
