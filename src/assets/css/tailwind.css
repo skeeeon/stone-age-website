@@ -1,5 +1,7 @@
 @import './theme.css';
 @import './primevue-theme.css';
+@import './pricing-cards.css';
+@import './technical-cards.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

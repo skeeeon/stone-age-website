@@ -12,7 +12,7 @@
           Open Source IoT Management and Data Automation Platform 
         </h1>
         <p class="text-lg sm:text-xl mb-6 sm:mb-8 text-gray-100">
-          A secure, scalable, and maintainable solution built on open standards for modern enterprises.
+          A secure, scalable, and efficient solution built on lightweight Go microservices for modern enterprises.
         </p>
         <div class="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
           <button 

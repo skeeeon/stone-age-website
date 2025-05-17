@@ -11,11 +11,13 @@
         <div 
           v-for="(feature, index) in features" 
           :key="`feature-${index}`" 
-          class="feature-card"
+          class="tech-feature-card"
         >
-          <i :class="feature.icon" class="feature-icon"></i>
-          <h3 class="text-xl font-semibold mb-3">{{ feature.title }}</h3>
-          <p :style="{ color: 'var(--color-text-light)' }">{{ feature.description }}</p>
+          <div class="tech-feature-icon">
+            <i :class="feature.icon"></i>
+          </div>
+          <h3 class="tech-feature-title">{{ feature.title }}</h3>
+          <p class="tech-feature-description">{{ feature.description }}</p>
         </div>
       </div>
     </div>
@@ -42,8 +44,8 @@ const features = [
   },
   {
     icon: 'pi pi-server',
-    title: 'Edge-Based Deployment',
-    description: 'Distributed processing at installation sites with local persistence for offline operation.'
+    title: 'Lightweight Go Architecture',
+    description: 'Efficient Go microservices that run everywhere - from small edge devices to large cloud infrastructures.'
   },
   {
     icon: 'pi pi-chart-bar',
