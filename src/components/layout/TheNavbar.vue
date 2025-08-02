@@ -91,11 +91,11 @@ import StoneLogo from '../common/StoneLogo.vue';
  * Handles smooth scrolling and mobile menu toggle
  */
 
-// Navigation items in a single place for consistency
+// Updated navigation items - changed "Technology" to "Architecture"
 const navItems = [
   { id: 'features', label: 'Features' },
   { id: 'benefits', label: 'Benefits' },
-  { id: 'technology', label: 'Technology' }
+  { id: 'architecture', label: 'Architecture' }
 ];
 
 // Reactive state

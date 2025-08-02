@@ -1,10 +1,9 @@
 <template>
 	<section id="features" class="section" :style="{ backgroundColor: 'var(--color-background-alt)' }">
     <div class="container">
-      <h2 class="section-title text-center">Enterprise IoT Made Simple</h2>
+      <h2 class="section-title text-center">Comprehensive IoT Platform Capabilities</h2>
       <p class="section-subtitle text-center">
-        Stone-Age.io provides a comprehensive platform for diverse IoT applications,
-        suitable for organizations of all sizes with flexible deployment options.
+        From device management to analytics, Stone-Age.io provides everything needed for enterprise IoT deployments across diverse industries and use cases.
       </p>
       
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mt-12 md:mt-16">
@@ -27,40 +26,40 @@
 <script setup>
 /**
  * Features section component
- * Displays a grid of key platform features with icons
+ * Displays a grid of key platform capabilities with real-world examples
  */
 
-// Define features directly in the setup scope
+// Define features with platform capabilities 
 const features = [
   {
-    icon: 'pi pi-shield',
-    title: 'Physical Access Control',
-    description: 'Manage building access with credential assignments, access rules, and comprehensive event logging. Includes emergency lockdown capabilities.'
+    icon: 'pi pi-database',
+    title: 'Device Registry & Lifecycle Management',
+    description: 'Centralized device registration, bootstrapping, and configuration management through Pocketbase integration with automated firmware distribution and credential provisioning.'
   },
   {
-    icon: 'pi pi-cog',
-    title: 'Building Automation',
-    description: 'Integrate with HVAC, lighting systems and more. Create automation rules for resource optimization and scheduling.'
+    icon: 'pi pi-share-alt',
+    title: 'Real-time Messaging & Communication',
+    description: 'NATS-based publish/subscribe messaging with topic-based permissions and guaranteed delivery for mission-critical operations and instant response times.'
+  },
+  {
+    icon: 'pi pi-server',
+    title: 'Edge Computing & Offline Resilience',
+    description: 'Local processing capabilities with NATS leaf nodes providing low latency communication and continued operation during network outages with local caching.'
   },
   {
     icon: 'pi pi-chart-line',
-    title: 'Environmental Monitoring',
-    description: 'Track temperature, humidity, occupancy, and air quality metrics with support for custom sensors and real-time alerts.'
-  },
-  {
-    icon: 'pi pi-sitemap',
-    title: 'Industrial IoT Applications',
-    description: 'Monitor production lines, track assets, and automate workflows in manufacturing environments with secure device management.'
+    title: 'Time-Series Data & Analytics',
+    description: 'Automated message-to-database bridging with TimescaleDB for optimized time-series storage, querying, and configurable data retention policies.'
   },
   {
     icon: 'pi pi-chart-bar',
-    title: 'Analytics & Reporting',
-    description: 'Real-time dashboards, historical trend analysis, custom reports, and anomaly detection with compliance documentation.'
+    title: 'Visualization & Alerting',
+    description: 'Built-in Grafana integration providing pre-configured dashboards, real-time monitoring, and intelligent alerting capabilities for operational insights.'
   },
   {
-    icon: 'pi pi-link',
-    title: 'Integration Capabilities',
-    description: 'Connect with enterprise systems via RESTful APIs, webhooks, and event streams. Adapters for popular platforms included.'
+    icon: 'pi pi-shield',
+    title: 'Decentralized Authentication',
+    description: 'NATS operator/resolver architecture for scalable, secure device authentication with JWT-based permissions and centralized credential management.'
   }
 ];
 </script>

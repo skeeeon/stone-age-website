@@ -4,13 +4,14 @@
  */
 
 .pricing-container {
-  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 max-w-6xl mx-auto;
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-4 max-w-7xl mx-auto;
 }
 
 /* Base card styling */
 .pricing-card {
   @apply rounded-lg overflow-hidden shadow-lg transition-all duration-300 flex flex-col h-full;
   background-color: var(--color-surface-primary);
+  min-width: 0; /* Prevent flex items from overflowing */
 }
 
 /* Dark section override */
@@ -56,11 +57,13 @@
 
 .pricing-feature-icon {
   @apply text-green-500 dark:text-green-400 mr-2 mt-1 flex-shrink-0;
+  font-size: 0.875rem; /* Slightly smaller for better spacing */
 }
 
 /* CTA button styling */
 .pricing-cta {
   @apply block w-full py-3 rounded-md font-medium text-center transition-colors mt-auto;
+  font-size: 0.875rem; /* Slightly smaller for better fit */
 }
 
 /* Popular card styling */
@@ -69,8 +72,8 @@
   box-shadow: var(--shadow-lg);
 }
 
-/* Apply scale effect only on larger screens */
-@media (min-width: 768px) {
+/* Apply scale effect only on larger screens and reduce slightly for 5-card layout */
+@media (min-width: 1024px) {
   .pricing-card-popular {
     @apply transform scale-105;
   }
@@ -90,4 +93,38 @@
 /* Popular plan badge */
 .pricing-badge {
   @apply absolute top-0 right-0 bg-primary-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg;
+}
+
+/* Responsive adjustments for 5-card layout */
+@media (min-width: 1024px) {
+  .pricing-container {
+    gap: 1rem; /* Slightly tighter spacing on large screens */
+  }
+  
+  .pricing-card {
+    max-width: none; /* Allow cards to be narrower */
+  }
+  
+  .pricing-price {
+    @apply text-xl; /* Slightly smaller price text to fit better */
+  }
+  
+  .pricing-features {
+    @apply text-sm; /* Smaller feature text for better fit */
+  }
+}
+
+/* Extra large screens - add more space */
+@media (min-width: 1280px) {
+  .pricing-container {
+    gap: 1.5rem;
+  }
+  
+  .pricing-price {
+    @apply text-2xl; /* Back to larger size on XL screens */
+  }
+  
+  .pricing-features {
+    @apply text-base; /* Back to normal size on XL screens */
+  }
 }

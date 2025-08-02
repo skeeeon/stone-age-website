@@ -12,8 +12,8 @@
           Open Source IoT Platform for Enterprise Operations
         </h1>
         <p class="text-lg sm:text-xl mb-6 sm:mb-8 text-gray-100">
-          A secure, scalable platform built on NATS messaging and efficient Go microservices, 
-          deployable on FreeBSD, Linux, or containers for diverse IoT applications.
+          A secure, scalable platform built on proven open source components like NATS, Pocketbase, and TimescaleDB, 
+          designed for diverse IoT applications across industries.
         </p>
         <div class="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
           <button 

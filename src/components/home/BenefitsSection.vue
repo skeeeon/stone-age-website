@@ -3,7 +3,7 @@
     <div class="container">
       <h2 class="section-title text-center text-white">Why Choose Stone-Age.io?</h2>
       <p class="section-subtitle text-center text-gray-300">
-        Our open source approach combined with flexible deployment options provides exceptional advantages for all IoT applications.
+        Our open source approach combined with proven enterprise components provides exceptional advantages for all IoT applications across industries.
       </p>
       
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mt-12 md:mt-16">
@@ -48,50 +48,50 @@ const iconBgColors = [
   '#4cc9f0'  // Blue for dollar
 ];
 
-// Benefits data with clear, concise points
+// Benefits data with platform-focused messaging
 const benefits = [
   {
     icon: 'pi pi-code',
     title: 'Open Source Transparency',
-    description: 'Our open source model provides full visibility and flexibility:',
+    description: 'Built entirely on proven open source components with full transparency:',
     points: [
-      'Core platform under MIT or BSD license',
-      'Complete code transparency',
-      'Community contribution model',
-      'No vendor lock-in with extensible architecture'
+      'Core platform components under permissive licenses',
+      'Complete visibility into all system operations',
+      'Community-driven development and contributions',
+      'No vendor lock-in with extensible, standards-based architecture'
     ]
   },
   {
     icon: 'pi pi-shield',
     title: 'Enterprise-Grade Security',
-    description: 'Built with security at its core:',
+    description: 'Built with security at its core using proven components:',
     points: [
-      'TLS for all connections',
-      'OAuth2 integration with enterprise identity providers',
-      'Topic-level access control and permission management',
-      'Secure credential storage and data protection'
+      'TLS encryption for all NATS communications',
+      'Decentralized authentication via NATS operator/resolver',
+      'JWT-based device credentials with topic-level permissions',
+      'Secure device bootstrapping and credential management'
     ]
   },
   {
     icon: 'pi pi-server',
     title: 'Flexible Deployment',
-    description: 'Choose the environment that works for you:',
+    description: 'Choose the environment that works for your infrastructure:',
     points: [
-      'FreeBSD preferred for best stability and performance',
-      'Full support for Linux and container environments',
-      'Edge-based deployment for multi-site installations',
-      'Resilient to connectivity issues with offline operation'
+      'FreeBSD preferred for optimal stability and performance',
+      'Full support for Linux distributions and container environments',
+      'Edge-based deployment with NATS leaf nodes for multi-site installations',
+      'Resilient to connectivity issues with comprehensive offline operation'
     ]
   },
   {
     icon: 'pi pi-dollar',
     title: 'Commercial Support',
-    description: 'Production-ready with professional backing:',
+    description: 'Production-ready platform with professional backing:',
     points: [
-      'Free self-hosted community edition',
-      'Tiered commercial support plans',
-      'Professional implementation services',
-      'Training and certification programs'
+      'Free self-hosted community edition with full features',
+      'Tiered commercial support plans for enterprise deployments',
+      'Professional implementation and integration services',
+      'Training and certification programs for development teams'
     ]
   }
 ];

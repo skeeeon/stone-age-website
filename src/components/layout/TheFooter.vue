@@ -5,7 +5,7 @@
         <div>
           <h3 class="text-xl font-bold mb-4">Stone-Age.io</h3>
           <p class="text-gray-300">
-            An open source IoT platform for physical access control and building automation.
+            An open source IoT platform for enterprise operations, built on proven components like NATS, Pocketbase, and TimescaleDB.
           </p>
         </div>
         <div>
@@ -50,11 +50,11 @@
 </template>
 
 <script setup>
-// Define link data using composition API
+// Updated link data - changed "Technology" to "Architecture"
 const productLinks = [
   { text: 'Features', href: '#features' },
   { text: 'Benefits', href: '#benefits' },
-  { text: 'Technology', href: '#technology' }
+  { text: 'Architecture', href: '#architecture' }
 ];
 
 const resourceLinks = [
