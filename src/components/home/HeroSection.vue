@@ -25,7 +25,7 @@
             Get Started
           </button>
           <a 
-            href="https://github.com" 
+            href="https://github.com/stone-age-io" 
             class="btn btn-outlined w-full sm:w-auto" 
             style="border-color: white; color: white;"
             aria-label="View Stone-Age.io on GitHub"

@@ -67,19 +67,19 @@ const actionButtons = [
   {
     text: 'Read Documentation',
     icon: 'pi-file',
-    href: '#',
+    href: 'https://docs.stone-age.io',
     classes: 'bg-white text-blue-800 hover:bg-gray-100'
   },
   {
     text: 'GitHub Repository',
     icon: 'pi-github',
-    href: 'https://github.com',
+    href: 'https://github.com/stone-age-io',
     classes: 'bg-white text-blue-800 hover:bg-gray-100'
   },
   {
     text: 'Contact Sales',
     icon: 'pi-envelope',
-    href: '#',
+    href: 'mailto:info@stone-age.io',
     classes: 'bg-transparent border border-white text-white hover:bg-white/10'
   }
 ];
