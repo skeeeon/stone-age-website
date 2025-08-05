@@ -58,14 +58,13 @@ const productLinks = [
 ];
 
 const resourceLinks = [
-  { text: 'GitHub', href: '#github' },
-  { text: 'Documentation', href: '#' },
-  { text: 'Blog', href: '#' }
+  { text: 'GitHub', href: 'https://github.com/stone-age-io/' },
+  { text: 'Documentation', href: 'https://docs.stone-age.io' },
+  { text: 'Blog', href: 'https://blog.stone-age.io' }
 ];
 
 const contactLinks = [
-  { text: 'Contact Us', href: '#' },
-  { text: 'Support', href: '#' },
-  { text: 'Twitter', href: '#' }
+  { text: 'Contact Us', href: 'mailto:info@stone-age.io' },
+  { text: 'Support', href: 'mailto:info@stone-age.io' }
 ];
 </script>

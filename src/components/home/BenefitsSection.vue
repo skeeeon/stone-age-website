@@ -12,7 +12,7 @@
           <div class="tech-card-header dark-card-header">
             <div class="flex items-center">
               <div class="rounded-full p-2 mr-3 flex items-center justify-center w-10 h-10"
-                 :style="{ backgroundColor: iconBgColors[index] }">
+                 :style="{ backgroundColor: iconBgColors[0] }">
                 <i :class="benefit.icon" class="text-white"></i>
               </div>
               <h3 class="text-xl font-semibold text-white">{{ benefit.title }}</h3>
